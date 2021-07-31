@@ -1,0 +1,134 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name": "Quiche lorraine et sa salade légère",
+            "category": "starter",
+            "price": 7.0
+        },
+        {
+            "id": 2,
+            "name": "Tartare aux deux saumons",
+            "category": "starter",
+            "price": 11.0
+        },
+        {
+            "id": 3,
+            "name": "Velouté de carottes au curcuma et lait de coco",
+            "category": "starter",
+            "price": 9.0
+        },
+        {
+            "id": 4,
+            "name": "Boeuf bourguignon et ses pommes vapeur",
+            "category": "main",
+            "price": 15.0
+        },
+        {
+            "id": 5,
+            "name": "Filet de daurade aux légumes du soleil et son riz pilaf",
+            "category": "main",
+            "price": 16.0
+        },
+        {
+            "id": 6,
+            "name": "Gratin de légumes d'hiver",
+            "category": "main",
+            "price": 12.0
+        },
+        {
+            "id": 7,
+            "name": "Moelleux au chocolat sur coulis de framboise et glace vanille",
+            "category": "dessert",
+            "price": 6.0
+        },
+        {
+            "id": 8,
+            "name": "Tarte tatin aux pommes et sa boule de vanille",
+            "category": "dessert",
+            "price": 6.0
+        },
+        {
+            "id": 9,
+            "name": "Salade de fruits façon crumble",
+            "category": "dessert",
+            "price": 5.5
+        }
+    ],
+    "menus": [
+        {
+            "name": "Entrée + Plat",
+            "price": 19.5,
+            "courses": [
+                {
+                    "id": 1,
+                    "price": 0.0
+                },
+                {
+                    "id": 3,
+                    "price": 0.0
+                },
+                {
+                    "id": 5,
+                    "price": 2.0
+                },
+                {
+                    "id": 6,
+                    "price": 0.0
+                }
+            ]
+        },
+        {
+            "name": "Plat + Dessert",
+            "price": 18.0,
+            "courses": [
+                {
+                    "id": 5,
+                    "price": 2.0
+                },
+                {
+                    "id": 6,
+                    "price": 0.0
+                },
+                {
+                    "id": 7,
+                    "price": 2.0
+                },
+                {
+                    "id": 9,
+                    "price": 1.0
+                }
+            ]
+        },
+        {
+            "name": "Entrée + Plat + Dessert",
+            "price": 18.0,
+            "courses": [
+                {
+                    "id": 1,
+                    "price": 0.0
+                },
+                {
+                    "id": 3,
+                    "price": 0.0
+                },
+                {
+                    "id": 5,
+                    "price": 2.0
+                },
+                {
+                    "id": 6,
+                    "price": 0.0
+                },
+                {
+                    "id": 7,
+                    "price": 2.0
+                },
+                {
+                    "id": 9,
+                    "price": 1.0
+                }
+            ]
+        }
+    ]
+}

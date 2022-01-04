@@ -6,8 +6,18 @@ import 'package:menu_wui/view/intro_screen.dart';
 void main() {
   const data = {
     'courses': [
-      {'name': 'Canelé', 'thumbnail': 'icons/canele-ico.png', 'price': 2.5},
-      {'name': 'Cookie', 'thumbnail': 'icons/cookie-ico.png', 'price': 1.75},
+      {
+        'name': 'Canelé',
+        'thumbnail': 'icons/canele-ico.png',
+        'price': 2.5,
+        'tags': ['IGB', 'Zero']
+      },
+      {
+        'name': 'Cookie',
+        'thumbnail': 'icons/cookie-ico.png',
+        'price': 1.75,
+        'tags': ['IGB', 'Ethic']
+      },
     ]
   };
   model = ModelView(MemoryStorageStrategy(data));

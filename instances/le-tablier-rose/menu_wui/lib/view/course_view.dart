@@ -21,21 +21,33 @@ class CourseView extends StatelessWidget {
   }
 
   Column renderTags() {
-    return Column(children: [
-      renderTag("IGB", Colors.blue),
-      renderTag("Zero", Colors.green)
-    ]);
+    List<Widget> tags = List.from({});
+    _courseCommand.course.tags.forEach((tag) => tags.add(renderTag(tag)));
+    return Column(children: tags);
   }
 
-  Container renderTag(String name, Color color) {
+  computeTagColor(String tag) {
+    Color result = Colors.black;
+    switch (tag) {
+      case "IGB":
+        result = Colors.blue;
+        break;
+      case "Zero":
+        result = Colors.green;
+        break;
+    }
+    return result;
+  }
+
+  Container renderTag(String tag) {
     return Container(
-        child: Text(name, style: TextStyle(color: Colors.white)),
+        child: Text(tag, style: TextStyle(color: Colors.white)),
         width: 40,
         alignment: Alignment.center,
         decoration: BoxDecoration(
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.all(Radius.circular(8.0)),
-            color: color));
+            color: computeTagColor(tag)));
   }
 
   Container renderName() {

@@ -6,16 +6,8 @@ import 'package:menu_wui/view/intro_screen.dart';
 void main() {
   const data = {
     'courses': [
-      {
-        'name': 'Canelé',
-        'thumbnail': 'https://image.flaticon.com/icons/png/512/164/164659.png',
-        'price': 2.5
-      },
-      {
-        'name': 'Cookie',
-        'thumbnail': 'https://image.flaticon.com/icons/png/512/164/164659.png',
-        'price': 1.75
-      },
+      {'name': 'Canelé', 'thumbnail': 'icons/canele-ico.png', 'price': 2.5},
+      {'name': 'Cookie', 'thumbnail': 'icons/cookie-ico.png', 'price': 1.75},
     ]
   };
   model = ModelView(MemoryStorageStrategy(data));

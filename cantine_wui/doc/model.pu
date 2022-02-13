@@ -1,0 +1,38 @@
+@startuml
+
+enum Unit {
+    + None
+    + Gram
+    + Liter
+}
+
+class Quantity {
+    + value: double
+}
+Quantity o--> "1..1" Unit: unit
+
+class Ingredient {
+    + name: String
+    + refPrice: double
+}
+Ingredient o-> "1..1" Quantity: refQuantity
+
+class Recipe {
+    + name: String
+}
+Recipe o--> "0..*" Quantity: ingredients
+Ingredient .. (Recipe, Quantity): name
+
+class Course {
+    + name: String
+    + thumbnail: String
+    + price: double
+    + tags: String[]
+}
+
+class CourseCommand {
+    + quantity: int
+}
+CourseCommand o--> "1..1" Course: course
+
+@enduml

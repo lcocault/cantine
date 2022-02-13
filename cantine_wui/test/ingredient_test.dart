@@ -24,6 +24,15 @@ void main() async {
     expect(oliveOil.refQuantity.value, 1.0);
     expect(oliveOil.refPrice, 6.0);
   });
+  test("Ingredient: get a price", () {
+    Quantity quantity = new Quantity(unit: Unit.gram, value: 50.0);
+    expect(butter.getPrice(quantity), 0.56);
+  });
+  test("Ingredient: incompatible units", () {
+    Quantity quantity = new Quantity(unit: Unit.gram, value: 50.0);
+    expect(
+        () => oliveOil.getPrice(quantity), throwsA(isA<IncompatibleUnits>()));
+  });
   test("Ingredient: from JSON", () {
     var data = {
       'name': 'Beurre doux',

@@ -1,3 +1,5 @@
+import 'package:cantine_wui/model/ingredient.dart';
+import 'package:cantine_wui/model/ingredient_catalog.dart';
 import 'package:cantine_wui/model/quantity.dart';
 
 class Recipe {
@@ -18,8 +20,17 @@ class Recipe {
     ingredients.putIfAbsent(ingredient, () => quantity);
   }
 
-  getQuantity(String t55floor) {
-    return ingredients[t55floor];
+  getQuantity(String ingredientName) {
+    return ingredients[ingredientName];
+  }
+
+  computeCost(IngredientCatalog catalog) {
+    double cost = 0.0;
+    ingredients.forEach((ingredientName, ingredientQuantity) {
+      Ingredient ingredient = catalog.getIngredient(ingredientName);
+      cost = cost + ingredient.getPrice(ingredientQuantity);
+    });
+    return cost;
   }
 
   static Recipe fromJson(Map<String, String> data) {

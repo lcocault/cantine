@@ -1,0 +1,12 @@
+[
+    {
+      "name": "Beurre doux",
+      "refQuantity": {"unit": "g", "value": 1000.0},
+      "refPrice": 11.16
+    },
+    {
+      "name": "Huide d'olive",
+      "refQuantity": {"unit": "L", "value": 1.0},
+      "refPrice": 6.0
+    }
+]

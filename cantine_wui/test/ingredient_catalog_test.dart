@@ -39,4 +39,20 @@ void main() async {
     IngredientCatalog jsonCatalog = IngredientCatalog.fromJson(data);
     expect(jsonCatalog.getIngredient("Beurre doux").name, "Beurre doux");
   });
+
+  test("Ingredient catalog: load from remote JSON", () async {
+    IngredientCatalog jsonCatalog = IngredientCatalog();
+    await jsonCatalog.load(Uri.parse(
+        "https://raw.githubusercontent.com/lcocault/cantine/develop/cantine_wui/test_data/ingredient_catalog_test.json"));
+    expect(jsonCatalog.getIngredient("Beurre doux").name, "Beurre doux");
+  });
+
+  test("Ingredient catalog: load from remote JSON failure", () {
+    IngredientCatalog jsonCatalog = IngredientCatalog();
+
+    expect(
+        () async => await jsonCatalog.load(Uri.parse(
+            "https://raw.githubusercontent.com/lcocault/cantine/develop/cantine_wui/test_data/unknown.json")),
+        throwsA(isA<CatalogLoadingFailure>()));
+  });
 }

@@ -33,7 +33,20 @@ class Recipe {
     return cost;
   }
 
-  static Recipe fromJson(Map<String, String> data) {
-    return new Recipe(name: "Pain", preparationTime: 0.0, cookingTime: 0.0);
+  static Recipe fromJson(Map<String, Object> data) {
+    final recipeName = data["name"] as String;
+    final recipePrepTime = data["preparationTime"] as double;
+    final recipeCookTime = data["cookingTime"] as double;
+    final recipeIngredients = data["ingredients"] as List;
+    Recipe result = new Recipe(
+        name: recipeName,
+        preparationTime: recipePrepTime,
+        cookingTime: recipeCookTime);
+    recipeIngredients.forEach((ingredient) {
+      final ingredientName = ingredient["name"] as String;
+      final ingredientQuantity = Quantity.fromJson(ingredient["quantity"]);
+      result.addIngredient(ingredientName, ingredientQuantity);
+    });
+    return result;
   }
 }

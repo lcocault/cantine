@@ -40,8 +40,27 @@ void main() async {
   });
 
   test("Recipe: from JSON", () {
-    var data = {'name': 'Pain'};
+    var data = {
+      'name': 'Pain',
+      'preparationTime': 30.0,
+      'cookingTime': 40.0,
+      'ingredients': [
+        {
+          'name': 'Farine T55',
+          'quantity': {'unit': 'g', 'value': 500.0},
+        },
+        {
+          'name': 'Levure chimique',
+          'quantity': {'unit': 'g', 'value': 10.0},
+        }
+      ]
+    };
     Recipe bread = Recipe.fromJson(data);
     expect(bread.name, "Pain");
+    expect(bread.preparationTime, 30.0);
+    expect(bread.cookingTime, 40.0);
+    expect(bread.ingredients.length, 2);
+    expect(bread.ingredients['Farine T55']?.value, 500.0);
+    expect(bread.ingredients['Levure chimique']?.value, 10.0);
   });
 }

@@ -33,7 +33,7 @@ class Recipe {
     return cost;
   }
 
-  static Recipe fromJson(Map<String, Object> data) {
+  static Recipe fromJson(Map<String, dynamic> data) {
     final recipeName = data["name"] as String;
     final recipePrepTime = data["preparationTime"] as double;
     final recipeCookTime = data["cookingTime"] as double;

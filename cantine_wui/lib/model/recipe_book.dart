@@ -54,7 +54,7 @@ class RecipeBook {
   }
 
   // Factories
-  factory RecipeBook.fromJson(List<Map<String, Object>> data) {
+  factory RecipeBook.fromJson(List<Map<String, dynamic>> data) {
     final result = RecipeBook();
     data.forEach((element) {
       result.add(Recipe.fromJson(element));

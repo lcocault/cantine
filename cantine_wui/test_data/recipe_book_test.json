@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Pain",
+      "preparationTime": 30.0,
+      "cookingTime": 40.0,
+      "ingredients": [
+        {
+          "name": "Farine T55",
+          "quantity": {"unit": "g", "value": 500.0}
+        },
+        {
+          "name": "Levure chimique",
+          "quantity": {"unit": "g", "value": 10.0}
+        }
+      ]
+    },
+    {
+      "name": "Crêpe",
+      "preparationTime": 10.0,
+      "cookingTime": 15.0,
+      "ingredients": [
+        {
+          "name": "Farine T55",
+          "quantity": {"unit": "g", "value": 250.0}
+        },
+        {
+          "name": "Lait",
+          "quantity": {"unit": "L", "value": 0.5}
+        }
+      ]
+    }
+  ]
